@@ -86,9 +86,7 @@ const Page = () => (
             </div>
             <div>
               <div style={{ height: "100%", display: "grid" }}>
-                <span class="MuiTypography-root MuiTypography-overline css-10pvg4-MuiTypography-root">
-                  {"Live Price"}
-                </span>
+                <span class="MuiTypography-root css-10pvg4-MuiTypography-root">{"Live Price"}</span>
                 <div style={{ bottom: "0px", display: "grid", justifyContent: "flex-start" }}>
                   <h6
                     class="MuiTypography-root MuiTypography-h6 css-1m7jvl4-MuiTypography-root"
@@ -97,7 +95,7 @@ const Page = () => (
                     {"$23,996.20"}
                   </h6>
                   <span
-                    class="MuiTypography-root MuiTypography-overline css-10pvg4-MuiTypography-root"
+                    class="MuiTypography-root css-10pvg4-MuiTypography-root"
                     style={{
                       fontSize: "10px",
                       margin: "auto",
