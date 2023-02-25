@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 import {
   Box,
   Card,
@@ -6,12 +6,12 @@ import {
   Link,
   Stack,
   Typography,
-  Unstable_Grid2 as Grid
-} from '@mui/material';
+  Unstable_Grid2 as Grid,
+} from "@mui/material";
 
 const Page = () => (
   <>
-    <Helmet>
+    {/* <Helmet>
       <title>
         Theme | Carpatin Free
       </title>
@@ -125,7 +125,7 @@ const Page = () => (
           </div>
         </Stack>
       </Container>
-    </Box>
+    </Box> */}
   </>
 );
 
