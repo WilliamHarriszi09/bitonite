@@ -1,8 +1,8 @@
-import { Link as RouterLink, matchPath, useLocation } from 'react-router-dom';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { items } from './config';
+import { Link as RouterLink, matchPath, useLocation } from "react-router-dom";
+import { Drawer, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { items } from "./config";
 
-const SIDE_NAV_WIDTH = 73;
+const SIDE_NAV_WIDTH = 200;
 const TOP_NAV_HEIGHT = 64;
 
 export const SideNav = () => {
@@ -14,21 +14,21 @@ export const SideNav = () => {
       variant="permanent"
       PaperProps={{
         sx: {
-          backgroundColor: '#0e0e0e',
-          display: 'flex',
-          flexDirection: 'column',
+          backgroundColor: "#0e0e0e",
+          display: "flex",
+          flexDirection: "column",
           height: `calc(100% - ${TOP_NAV_HEIGHT}px)`,
           p: 1,
           top: TOP_NAV_HEIGHT,
           width: SIDE_NAV_WIDTH,
-          zIndex: (theme) => theme.zIndex.appBar - 100
-        }
+          zIndex: (theme) => theme.zIndex.appBar - 100,
+        },
       }}
     >
-      <List sx={{ width: '100%' }}>
+      <List sx={{ width: "100%" }}>
         {items.map((item) => {
           const active = matchPath({ path: item.href, end: true }, location.pathname);
-          
+
           return (
             <ListItem
               disablePadding
@@ -36,15 +36,15 @@ export const SideNav = () => {
               key={item.href}
               to={item.href}
               sx={{
-                flexDirection: 'column',
+                flexDirection: "row",
                 px: 2,
-                py: 1.5
+                py: 1.5,
               }}
             >
               <ListItemIcon
                 sx={{
-                  minWidth: 'auto',
-                  color: active ? 'primary.main' : 'neutral.400'
+                  minWidth: "auto",
+                  color: active ? "primary.main" : "neutral.400",
                 }}
               >
                 {item.icon}
@@ -52,10 +52,10 @@ export const SideNav = () => {
               <ListItemText
                 primary={item.label}
                 primaryTypographyProps={{
-                  variant: 'caption',
+                  variant: "caption",
                   sx: {
-                    color: active ? 'primary.main' : 'text.secondary'
-                  }
+                    color: active ? "primary.main" : "text.secondary",
+                  },
                 }}
               />
             </ListItem>
