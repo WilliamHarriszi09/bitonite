@@ -1,6 +1,6 @@
-import { Helmet } from 'react-helmet-async';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { Helmet } from "react-helmet-async";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import {
   Avatar,
   Box,
@@ -12,43 +12,26 @@ import {
   Stack,
   TextField,
   Typography,
-  Unstable_Grid2 as Grid
-} from '@mui/material';
+  Unstable_Grid2 as Grid,
+} from "@mui/material";
 
-const companySizeOptions = ['1-10', '11-30', '31-50', '50+'];
+const companySizeOptions = ["1-10", "11-30", "31-50", "50+"];
 
 const initialValues = {
-  companyName: 'ACME Corp LLC.',
-  companySize: '1-10',
-  email: 'chen.simmons@acmecorp.com',
-  name: 'Chen Simmons',
-  jobTitle: 'Operation',
-  submit: null
+  companyName: "ACME Corp LLC.",
+  companySize: "1-10",
+  email: "chen.simmons@acmecorp.com",
+  name: "Chen Simmons",
+  jobTitle: "Operation",
+  submit: null,
 };
 
 const validationSchema = Yup.object({
-  companyName: Yup
-    .string()
-    .max(255)
-    .required('Company name is required'),
-  companySize: Yup
-    .string()
-    .max(255)
-    .oneOf(companySizeOptions)
-    .required('Company size is required'),
-  email: Yup
-    .string()
-    .email('Must be a valid email')
-    .max(255)
-    .required('Email is required'),
-  name: Yup
-    .string()
-    .max(255)
-    .required('Name is required'),
-  jobTitle: Yup
-    .string()
-    .max(255)
-    .required('Job title is required')
+  companyName: Yup.string().max(255).required("Company name is required"),
+  companySize: Yup.string().max(255).oneOf(companySizeOptions).required("Company size is required"),
+  email: Yup.string().email("Must be a valid email").max(255).required("Email is required"),
+  name: Yup.string().max(255).required("Name is required"),
+  jobTitle: Yup.string().max(255).required("Job title is required"),
 });
 
 const Page = () => {
@@ -58,12 +41,12 @@ const Page = () => {
     onSubmit: async (values, helpers) => {
       helpers.setStatus({ success: true });
       helpers.setSubmitting(false);
-    }
+    },
   });
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>
           Settings | Carpatin Free
         </title>
@@ -222,7 +205,7 @@ const Page = () => {
             </div>
           </Stack>
         </Container>
-      </Box>
+      </Box> */}
     </>
   );
 };

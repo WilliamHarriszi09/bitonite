@@ -1,121 +1,109 @@
-import { useCallback, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { subHours, subMinutes } from 'date-fns';
-import { Box, Button, Card, Container, Divider, Stack, Typography } from '@mui/material';
-import { OrdersSearch } from 'src/sections/orders/orders-search';
-import { OrdersTable } from 'src/sections/orders/orders-table';
+import { useCallback, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { subHours, subMinutes } from "date-fns";
+import { Box, Button, Card, Container, Divider, Stack, Typography } from "@mui/material";
+import { OrdersSearch } from "src/sections/orders/orders-search";
+import { OrdersTable } from "src/sections/orders/orders-table";
 
 const now = new Date();
 
 const orders = [
   {
-    id: '5273',
+    id: "5273",
     createdAt: subMinutes(now, 21).getTime(),
-    currency: '$',
+    currency: "$",
     customer: {
-      name: 'Devon Lane'
+      name: "Devon Lane",
     },
-    status: 'delivered',
+    status: "delivered",
     totalAmount: 192.5,
-    updatedAt: subMinutes(now, 7).getTime()
+    updatedAt: subMinutes(now, 7).getTime(),
   },
   {
-    id: '9265',
+    id: "9265",
     createdAt: subMinutes(now, 56).getTime(),
-    currency: '$',
+    currency: "$",
     customer: {
-      name: 'Livia Louthe'
+      name: "Livia Louthe",
     },
-    status: 'complete',
+    status: "complete",
     totalAmount: 631,
-    updatedAt: subMinutes(now, 54).getTime()
+    updatedAt: subMinutes(now, 54).getTime(),
   },
   {
-    id: '9266',
+    id: "9266",
     createdAt: subHours(subMinutes(now, 31), 2).getTime(),
-    currency: '$',
+    currency: "$",
     customer: {
-      name: 'Peri Ottawell'
+      name: "Peri Ottawell",
     },
-    status: 'placed',
+    status: "placed",
     totalAmount: 631,
-    updatedAt: subHours(subMinutes(now, 43), 1).getTime()
+    updatedAt: subHours(subMinutes(now, 43), 1).getTime(),
   },
   {
-    id: '1090',
+    id: "1090",
     createdAt: subHours(subMinutes(now, 51), 2).getTime(),
-    currency: '$',
+    currency: "$",
     customer: {
-      name: 'Thadeus Jacketts'
+      name: "Thadeus Jacketts",
     },
-    status: 'processed',
+    status: "processed",
     totalAmount: 100,
-    updatedAt: subHours(subMinutes(now, 13), 2).getTime()
+    updatedAt: subHours(subMinutes(now, 13), 2).getTime(),
   },
   {
-    id: '1111',
+    id: "1111",
     createdAt: subHours(subMinutes(now, 6), 3).getTime(),
-    currency: '$',
+    currency: "$",
     customer: {
-      name: 'Rad Jose'
+      name: "Rad Jose",
     },
-    status: 'processed',
+    status: "processed",
     totalAmount: 60,
-    updatedAt: subHours(subMinutes(now, 54), 2).getTime()
+    updatedAt: subHours(subMinutes(now, 54), 2).getTime(),
   },
   {
-    id: '2475',
+    id: "2475",
     createdAt: subHours(subMinutes(now, 17), 4).getTime(),
-    currency: '$',
+    currency: "$",
     customer: {
-      name: 'Eydie Hopkyns'
+      name: "Eydie Hopkyns",
     },
-    status: 'complete',
+    status: "complete",
     totalAmount: 1200,
-    updatedAt: subHours(subMinutes(now, 1), 2).getTime()
-  }
+    updatedAt: subHours(subMinutes(now, 1), 2).getTime(),
+  },
 ];
 
 const Page = () => {
-  const [mode, setMode] = useState('table');
-  const [query, setQuery] = useState('');
+  const [mode, setMode] = useState("table");
+  const [query, setQuery] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const handleModeChange = useCallback(
-    (event, value) => {
-      if (value) {
-        setMode(value);
-      }
-    },
-    []
-  );
+  const handleModeChange = useCallback((event, value) => {
+    if (value) {
+      setMode(value);
+    }
+  }, []);
 
-  const handleQueryChange = useCallback(
-    (value) => {
-      setQuery(value);
-    },
-    []
-  );
+  const handleQueryChange = useCallback((value) => {
+    setQuery(value);
+  }, []);
 
-  const handleChangePage = useCallback(
-    (event, value) => {
-      setPage(value);
-    },
-    []
-  );
+  const handleChangePage = useCallback((event, value) => {
+    setPage(value);
+  }, []);
 
-  const handleChangeRowsPerPage = useCallback(
-    (event) => {
-      setRowsPerPage(parseInt(event.target.value, 10));
-      setPage(0);
-    },
-    []
-  );
+  const handleChangeRowsPerPage = useCallback((event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  }, []);
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>
           Orders | Carpatin Free
         </title>
@@ -166,7 +154,7 @@ const Page = () => {
             </div>
           </Stack>
         </Container>
-      </Box>
+      </Box> */}
     </>
   );
 };

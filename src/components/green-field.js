@@ -1,14 +1,24 @@
-import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
+import PropTypes from "prop-types";
+import { useTheme } from "@mui/material/styles";
 
 const GreenField = (props) => {
-  const { color: colorProp = 'primary', title, description, current_cost, plus_cost, sub_cost, isActive } = props;
+  const {
+    color: colorProp = "primary",
+    title,
+    description,
+    current_cost,
+    plus_cost,
+    sub_cost,
+    isActive,
+  } = props;
   const theme = useTheme();
 
-  const color = colorProp === 'primary'
-    ? theme.palette.primary.main
-    : colorProp === 'black'
-      ? '#1D262D' : '#FFFFFF';
+  const color =
+    colorProp === "primary"
+      ? theme.palette.primary.main
+      : colorProp === "black"
+      ? "#1D262D"
+      : "#FFFFFF";
 
   return (
     // <svg
@@ -33,23 +43,70 @@ const GreenField = (props) => {
     //   />
     // </svg>
     <>
-        <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1rms08z-MuiPaper-root-MuiCard-root" style={{height: '100%'}}>
-            <div style={{padding: '20px', height: '100%', display: 'grid'}}>
-                <span class="MuiTypography-root MuiTypography-overline css-10pvg4-MuiTypography-root" >{title}</span>
-                {description === null || description === "" ? null : <div class="MuiPaper-rounded" style={{fontSize: '10px', background: '#3c3b3bcc', padding: '1em', borderRadius: '5px', margin: '1.5em 0'}}>{description}</div>}
-                <div style={{bottom: '0px', display: 'grid', justifyContent: 'flex-start'}}>
-                    <h6 class="MuiTypography-root MuiTypography-h6 css-1m7jvl4-MuiTypography-root" style={{margin: 'auto', marginLeft: '0px', marginBottom: '0px', color: isActive == true ? '#087055' : '' }}>{current_cost}</h6>
-                    {plus_cost === null || plus_cost === "" ? null : <span class="MuiTypography-root MuiTypography-overline css-10pvg4-MuiTypography-root" 
-                        style={{fontSize: '10px', margin: 'auto', marginLeft: '0px', marginBottom: '0px', padding: '1px 10px', background: '#08705570', color:'#087055', borderRadius: '20px'}}>{plus_cost}</span>}
-                </div>
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1rms08z-MuiPaper-root-MuiCard-root"
+        style={{ height: "100%" }}
+      >
+        <div style={{ padding: "20px", height: "100%", display: "grid" }}>
+          <span
+            class="MuiTypography-root MuiTypography-overline css-10pvg4-MuiTypography-root"
+            style={{ textDecoration: "underline", cursor: "pointer" }}
+          >
+            {title}
+          </span>
+          {description === null || description === "" ? null : (
+            <div
+              class="MuiPaper-rounded"
+              style={{
+                fontSize: "12px",
+                background: "#3c3b3bcc",
+                padding: "1em",
+                borderRadius: "5px",
+                margin: "1.5em 0",
+                color: "#667085",
+              }}
+            >
+              {description}
             </div>
+          )}
+          <div style={{ bottom: "0px", display: "grid", justifyContent: "flex-start" }}>
+            <h6
+              class="MuiTypography-root MuiTypography-h6 css-1m7jvl4-MuiTypography-root"
+              style={{
+                margin: "auto",
+                marginLeft: "0px",
+                marginBottom: "0px",
+                color: isActive == true ? "#087055" : "",
+              }}
+            >
+              {current_cost}
+            </h6>
+            {plus_cost === null || plus_cost === "" ? null : (
+              <span
+                class="MuiTypography-root MuiTypography-overline css-10pvg4-MuiTypography-root"
+                style={{
+                  fontSize: "10px",
+                  margin: "auto",
+                  marginLeft: "0px",
+                  marginBottom: "0px",
+                  padding: "1px 10px",
+                  background: "#08705570",
+                  color: "#087055",
+                  borderRadius: "20px",
+                }}
+              >
+                {plus_cost}
+              </span>
+            )}
+          </div>
         </div>
+      </div>
     </>
   );
 };
 
 GreenField.propTypes = {
-  color: PropTypes.oneOf(['black', 'primary', 'white'])
+  color: PropTypes.oneOf(["black", "primary", "white"]),
 };
 
-export default (GreenField);
+export default GreenField;
