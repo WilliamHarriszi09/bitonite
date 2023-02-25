@@ -47,7 +47,15 @@ const GreenField = (props) => {
         class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1rms08z-MuiPaper-root-MuiCard-root"
         style={{ height: "100%" }}
       >
-        <div style={{ padding: "20px", height: "100%", display: "grid" }}>
+        <div
+          style={{
+            padding: "20px",
+            height: "100%",
+            display: "grid",
+            backgroundColor: "#1d1d1d",
+            borderRadius: ".4em",
+          }}
+        >
           <span
             class="MuiTypography-root MuiTypography-overline css-10pvg4-MuiTypography-root"
             style={{ textDecoration: "underline", cursor: "pointer" }}

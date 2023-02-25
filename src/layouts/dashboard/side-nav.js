@@ -18,7 +18,7 @@ export const SideNav = () => {
           display: "flex",
           flexDirection: "column",
           height: `calc(100% - ${TOP_NAV_HEIGHT}px)`,
-          p: 1,
+          p: 2,
           top: TOP_NAV_HEIGHT,
           width: SIDE_NAV_WIDTH,
           zIndex: (theme) => theme.zIndex.appBar - 100,
@@ -54,6 +54,7 @@ export const SideNav = () => {
                 primaryTypographyProps={{
                   variant: "caption",
                   sx: {
+                    paddingLeft: "1em",
                     color: active ? "primary.main" : "text.secondary",
                   },
                 }}
